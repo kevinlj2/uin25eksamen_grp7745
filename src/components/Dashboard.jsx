@@ -1,3 +1,11 @@
 export default function Dashboard() {
-  return;
+  return (
+    <>
+      <h1>Dashboard</h1>
+      <form>
+        <input type="text" placeholder="Brukernavn" />
+        <button>Logg inn</button>
+      </form>
+    </>
+  );
 }
