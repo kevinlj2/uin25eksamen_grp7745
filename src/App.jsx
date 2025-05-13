@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
+import Layout from "./components/Layout";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import EventPage from "./components/EventPage";
+import CategoryPage from "./components/CategoryPage";
+import Dashboard from "./components/Dashboard";
 
 function App() {
-  const [festivals, setFestivals] = useState();
+  const [festivals, setFestivals] = useState([]);
 
   const getFestivals = async () => {
     fetch(
@@ -15,7 +21,16 @@ function App() {
     getFestivals();
     console.log("Min state", festivals);
   });
-  return;
+  return (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/event/:id" element={<EventPage />} />
+        <Route path="/category/:slug" element={<CategoryPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Layout>
+  );
 }
 
 export default App;
