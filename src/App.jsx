@@ -9,6 +9,7 @@ import Dashboard from "./components/Dashboard";
 function App() {
   const [festivals, setFestivals] = useState([]);
 
+  //ID-er er funnet via https://developer.ticketmaster.com/api-explorer/v2/ og bruk av parametere.
   const FestivalEvents = [
     "Z698xZb_Z17q339",
     "Z698xZb_Z16v7eGkFy",
@@ -17,12 +18,18 @@ function App() {
   ];
 
   const getFestivals = async () => {
-    fetch(
-      "https://app.ticketmaster.com/discovery/v2/events.json?apikey=jj8DstPJ27elraSgsFdMAgqVpAMAGILh"
-    )
-      .then((response) => response.json())
-      .then((data) => setFestivals(data.data))
-      .catch((error) => console.error("Skjedde en feil ved fetch", error));
+    const eventUrls = FestivalEvents.map((id) =>
+      fetch(
+        `https://app.ticketmaster.com/discovery/v2/events/${id}.json?apikey=jj8DstPJ27elraSgsFdMAgqVpAMAGILh`
+      ).then((res) => res.json())
+    );
+
+    try {
+      const events = await Promise.all(eventUrls);
+      setFestivals(events);
+    } catch (error) {
+      console.log("Skjedde en feil ved fetch", error);
+    }
   };
 
   useEffect(() => {
@@ -30,11 +37,18 @@ function App() {
     console.log("Min state", festivals);
   });
 
+  useEffect(() => {
+    console.log(festivals);
+  }, [festivals]);
+
   return (
     <Layout>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/event/:id" element={<EventPage />} />
+        <Route path="/" element={<Home festivals={festivals} />} />
+        <Route
+          path="/event/:id"
+          element={<EventPage festivals={festivals} />}
+        />
         <Route path="/category/:slug" element={<CategoryPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
