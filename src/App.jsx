@@ -34,12 +34,9 @@ function App() {
 
   useEffect(() => {
     getFestivals();
-    console.log("Min state", festivals);
-  });
+  }, []);
 
-  useEffect(() => {
-    console.log(festivals);
-  }, [festivals]);
+  useEffect(() => {}, [festivals]);
 
   return (
     <Layout>

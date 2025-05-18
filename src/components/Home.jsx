@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../styles/_home.scss";
 
 export default function EventCard({ festivals }) {
   return (
