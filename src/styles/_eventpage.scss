@@ -1,3 +1,11 @@
-img {
-  width: 1000px;
+@media (min-width: 601px) {
+  img {
+    width: 1000px;
+  }
+}
+
+@media (max-width: 600px) {
+  img {
+    width: 500px;
+  }
 }

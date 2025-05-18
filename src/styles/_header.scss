@@ -35,3 +35,25 @@ nav {
 #login {
   margin-right: 20px;
 }
+
+@media (max-width: 600px) {
+  body {
+    box-sizing: border-box;
+    display: block;
+  }
+  header {
+    width: 85vw;
+    margin: 10px;
+
+    nav,
+    ul {
+      margin: 0px;
+    }
+  }
+
+  .category {
+    width: 120px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
