@@ -9,17 +9,19 @@ export default function Header() {
           <Link to="/" id="logo">
             BillettLyst
           </Link>
-          <li>
-            <Link to="category/music">Musikk </Link>
-          </li>
-          <li>
-            <Link to="category/sport">Sport </Link>
-          </li>
-          <li>
-            <Link to="category/theatre">Teater/Show </Link>
-          </li>
+          <div className="category">
+            <li>
+              <Link to="category/music">Musikk</Link>
+            </li>
+            <li>
+              <Link to="category/sport">Sport</Link>
+            </li>
+            <li>
+              <Link to="category/theatre">Teater/Show</Link>
+            </li>
+          </div>
           <Link to="dashboard" id="login">
-            Logg Inn
+            Logg inn
           </Link>
         </ul>
       </nav>

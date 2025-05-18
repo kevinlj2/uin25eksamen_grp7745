@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import "../styles/_eventpage.scss";
 
 export default function EventPage({ festivals }) {
   const { id } = useParams();
