@@ -1,21 +1,9 @@
-import { Link } from "react-router-dom";
+import Header from "./Header";
 
 export default function Layout({ children }) {
   return (
     <>
-      <header>
-        <nav>
-          <ul>
-            <Link to="/" id="logo">
-              BillettLyst
-            </Link>
-            <Link to="category/music">Musikk </Link>
-            <Link to="category/sport">Sport </Link>
-            <Link to="category/theatre">Teater/Show </Link>
-            <Link to="dashboard">Logg Inn</Link>
-          </ul>
-        </nav>
-      </header>
+      <Header />
       <main>{children}</main>
     </>
   );
