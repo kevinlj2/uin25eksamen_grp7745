@@ -8,13 +8,11 @@ export default function EventPage({ festivals }) {
 
   const name = event._embedded?.attractions?.[0]?.name || event.name;
   const image = event.images?.[0]?.url;
-  const description = event.info || event.description;
 
   return (
     <section>
       <h1>{name}</h1>
       {image && <img src={image} alt={name} />}
-      <p>{description}</p>
     </section>
   );
 }
