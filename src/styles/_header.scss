@@ -1,6 +1,7 @@
 header {
   margin-left: 90px;
   margin-right: 235px;
+  width: 80vw;
 }
 
 nav {
@@ -29,4 +30,8 @@ nav {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
+}
+
+#login {
+  margin-right: 20px;
 }
