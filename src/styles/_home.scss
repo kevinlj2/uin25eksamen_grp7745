@@ -1,4 +1,36 @@
+header {
+  margin: 10px 90px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
+  margin: 10px 100px;
+}
+
+article {
+  h2,
+  a {
+    margin: 0px 30px;
+  }
+
+  button {
+    margin: 30px;
+    padding: 15px;
+    border-radius: 0px;
+    background-color: #000;
+    a {
+      color: #fff;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 350px;
+    height: 230px;
+    padding: 30px;
+    margin: 0px;
+  }
 }

@@ -10,7 +10,9 @@ export default function EventCard({ festivals }) {
           <article key={festival.id}>
             <img src={festival.images[0].url} alt={Events} />
             <h2>{Events}</h2>
-            <Link to={`event/${festival.id}`}>Les mer om {Events}</Link>
+            <button>
+              <Link to={`event/${festival.id}`}>Les mer om {Events}</Link>
+            </button>
           </article>
         );
       })}
