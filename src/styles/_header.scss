@@ -1,9 +1,23 @@
+header {
+  margin: 10px 90px;
+  padding: 1rem;
+}
+
 nav {
   font-size: 20px;
+
   ul {
     display: flex;
-    gap: 3rem;
-    flex-direction: row;
+    justify-content: space-between;
     list-style: none;
+
+    a {
+      color: #fff;
+    }
   }
+}
+
+#logo {
+  font-size: 50px;
+  font-weight: bold;
 }

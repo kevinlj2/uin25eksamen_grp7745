@@ -6,11 +6,9 @@ export default function Header() {
     <header>
       <nav>
         <ul>
-          <li>
-            <Link to="/" id="logo">
-              BillettLyst
-            </Link>
-          </li>
+          <Link to="/" id="logo">
+            BillettLyst
+          </Link>
           <li>
             <Link to="category/music">Musikk </Link>
           </li>
@@ -20,9 +18,9 @@ export default function Header() {
           <li>
             <Link to="category/theatre">Teater/Show </Link>
           </li>
-          <li>
-            <Link to="dashboard">Logg Inn</Link>
-          </li>
+          <Link to="dashboard" id="login">
+            Logg Inn
+          </Link>
         </ul>
       </nav>
     </header>
